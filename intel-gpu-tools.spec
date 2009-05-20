@@ -1,5 +1,5 @@
 Name: intel-gpu-tools
-Version: 1.0
+Version: 1.0.1
 Release: %mkrel 1
 Summary: Userland and debug tools Intel graphics controllers
 Group: System/X11
@@ -60,3 +60,10 @@ rm -rf %{buildroot}
 %{_bindir}/intel_upload_blit_large_gtt
 %{_bindir}/intel_upload_blit_large_map
 %{_bindir}/intel_upload_blit_small
+%{_datadir}/man/man1/intel_gpu_dump.*
+%{_datadir}/man/man1/intel_gpu_top.*
+%{_datadir}/man/man1/intel_stepping.*
+%{_datadir}/man/man1/intel_upload_blit_large.*
+%{_datadir}/man/man1/intel_upload_blit_large_gtt.*
+%{_datadir}/man/man1/intel_upload_blit_large_map.*
+%{_datadir}/man/man1/intel_upload_blit_small.*
