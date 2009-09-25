@@ -5,7 +5,6 @@ Summary: Userland and debug tools Intel graphics controllers
 Group: System/X11
 URL: http://xorg.freedesktop.org
 Source: http://xorg.freedesktop.org/archive/individual/app/%{name}-%{version}.tar.bz2
-Patch0: intel-gpu-tools-1.0-format-security.patch
 License: MIT
 BuildRoot: %{_tmppath}/%{name}-root
 
@@ -38,7 +37,6 @@ to get it rewritten when I move it over.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %configure
@@ -53,17 +51,5 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
-%{_bindir}/intel_gpu_dump
-%{_bindir}/intel_gpu_top
-%{_bindir}/intel_stepping
-%{_bindir}/intel_upload_blit_large
-%{_bindir}/intel_upload_blit_large_gtt
-%{_bindir}/intel_upload_blit_large_map
-%{_bindir}/intel_upload_blit_small
-%{_datadir}/man/man1/intel_gpu_dump.*
-%{_datadir}/man/man1/intel_gpu_top.*
-%{_datadir}/man/man1/intel_stepping.*
-%{_datadir}/man/man1/intel_upload_blit_large.*
-%{_datadir}/man/man1/intel_upload_blit_large_gtt.*
-%{_datadir}/man/man1/intel_upload_blit_large_map.*
-%{_datadir}/man/man1/intel_upload_blit_small.*
+%{_bindir}/intel_*
+%{_datadir}/man/man1/intel_*
