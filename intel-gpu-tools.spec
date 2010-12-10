@@ -1,6 +1,6 @@
 Name: intel-gpu-tools
 Version: 1.0.2
-Release: %mkrel 1
+Release: %mkrel 2
 Summary: Userland and debug tools Intel graphics controllers
 Group: System/X11
 URL: http://xorg.freedesktop.org
