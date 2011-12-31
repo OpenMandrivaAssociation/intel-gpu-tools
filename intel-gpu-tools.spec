@@ -1,23 +1,21 @@
 Name: intel-gpu-tools
-Version: 1.0.2
-Release: %mkrel 2
+Version: 1.1
+Release: 1
 Summary: Userland and debug tools Intel graphics controllers
 Group: System/X11
+License: MIT
 URL: http://xorg.freedesktop.org
 Source: http://xorg.freedesktop.org/archive/individual/app/%{name}-%{version}.tar.bz2
-License: MIT
-BuildRoot: %{_tmppath}/%{name}-root
 
-BuildRequires: libx11-devel >= 1.0.0
-BuildRequires: libdrm-devel >= 2.4.6
-BuildRequires: libxvmc-devel >= 1.0.1
-BuildRequires: x11-proto-devel >= 1.0.0
-BuildRequires: x11-server-devel >= 1.3
-BuildRequires: x11-util-macros >= 1.0.1
-BuildRequires: GL-devel
+BuildRequires: pkgconfig(gl)
+BuildRequires: pkgconfig(libdrm) >= 2.4.6
+BuildRequires: pkgconfig(x11) >= 1.0.0
+BuildRequires: pkgconfig(xorg-server) >= 1.3
+BuildRequires: pkgconfig(xorg-macros) >= 1.0.1
+BuildRequires: pkgconfig(xproto) >= 1.0.0
+BuildRequires: pkgconfig(xvmc) >= 1.0.1
 
 %description
-
 This little package is an amalgamation of a few things:
 - miscellaneous userland tools that don't really fit into the 2D driver tree
 - standalone regression tests for the DRM (make check)
@@ -39,17 +37,15 @@ to get it rewritten when I move it over.
 %setup -q
 
 %build
-%configure
+%configure2_5x
 %make
 
 %install
 rm -rf %{buildroot}
 %makeinstall_std
 
-%clean
-rm -rf %{buildroot}
-
 %files
-%defattr(-,root,root)
 %{_bindir}/intel_*
-%{_datadir}/man/man1/intel_*
+%{_mandir}/man1/intel_*
+
+
