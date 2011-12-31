@@ -9,6 +9,7 @@ Source: http://xorg.freedesktop.org/archive/individual/app/%{name}-%{version}.ta
 
 BuildRequires: pkgconfig(gl)
 BuildRequires: pkgconfig(libdrm) >= 2.4.6
+BuildRequires: pkgconfig(libudev)
 BuildRequires: pkgconfig(x11) >= 1.0.0
 BuildRequires: pkgconfig(xorg-server) >= 1.3
 BuildRequires: pkgconfig(xorg-macros) >= 1.0.1
@@ -45,7 +46,7 @@ rm -rf %{buildroot}
 %makeinstall_std
 
 %files
+%{_bindir}/forcewaked
 %{_bindir}/intel_*
 %{_mandir}/man1/intel_*
-
 
