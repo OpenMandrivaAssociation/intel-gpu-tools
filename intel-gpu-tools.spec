@@ -8,6 +8,7 @@ URL: http://xorg.freedesktop.org
 Source0: http://xorg.freedesktop.org/archive/individual/app/%{name}-%{version}.tar.bz2
 
 BuildRequires: pkgconfig(gl)
+BuildRequires: pkgconfig(cairo)
 BuildRequires: pkgconfig(libdrm) >= 2.4.6
 BuildRequires: pkgconfig(libudev)
 BuildRequires: pkgconfig(x11) >= 1.0.0
