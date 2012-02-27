@@ -1,11 +1,11 @@
 Name: intel-gpu-tools
-Version: 1.1
+Version: 1.2
 Release: 1
 Summary: Userland and debug tools Intel graphics controllers
 Group: System/X11
 License: MIT
 URL: http://xorg.freedesktop.org
-Source: http://xorg.freedesktop.org/archive/individual/app/%{name}-%{version}.tar.bz2
+Source0: http://xorg.freedesktop.org/archive/individual/app/%{name}-%{version}.tar.bz2
 
 BuildRequires: pkgconfig(gl)
 BuildRequires: pkgconfig(libdrm) >= 2.4.6
@@ -42,11 +42,11 @@ to get it rewritten when I move it over.
 %make
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 
 %files
 %{_bindir}/forcewaked
 %{_bindir}/intel_*
+%{_bindir}/sprite_on
 %{_mandir}/man1/intel_*
 
