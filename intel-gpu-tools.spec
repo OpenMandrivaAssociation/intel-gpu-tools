@@ -7,15 +7,19 @@ License: MIT
 URL: http://xorg.freedesktop.org
 Source0: http://xorg.freedesktop.org/archive/individual/app/%{name}-%{version}.tar.bz2
 
-BuildRequires: pkgconfig(gl)
-BuildRequires: pkgconfig(cairo)
-BuildRequires: pkgconfig(libdrm) >= 2.4.6
-BuildRequires: pkgconfig(libudev)
-BuildRequires: pkgconfig(x11) >= 1.0.0
-BuildRequires: pkgconfig(xorg-server) >= 1.3
-BuildRequires: pkgconfig(xorg-macros) >= 1.0.1
-BuildRequires: pkgconfig(xproto) >= 1.0.0
-BuildRequires: pkgconfig(xvmc) >= 1.0.1
+BuildRequires:	pkgconfig(gl)
+BuildRequires:	pkgconfig(cairo)
+BuildRequires:	pkgconfig(libdrm) >= 2.4.6
+BuildRequires:	pkgconfig(libudev)
+BuildRequires:	pkgconfig(x11) >= 1.0.0
+BuildRequires:	pkgconfig(xorg-server) >= 1.3
+BuildRequires:	pkgconfig(xorg-macros) >= 1.0.1
+BuildRequires:	pkgconfig(xproto) >= 1.0.0
+BuildRequires:	pkgconfig(xvmc) >= 1.0.1
+BuildRequires:	pkgconfig(xrandr)
+BuildRequires:	flex
+BuildRequires:	bison
+BuildRequires:	byacc
 
 %description
 This little package is an amalgamation of a few things:
@@ -45,9 +49,11 @@ to get it rewritten when I move it over.
 %install
 %makeinstall_std
 
-%files
-%{_bindir}/forcewaked
-%{_bindir}/intel_*
-%{_bindir}/sprite_on
-%{_mandir}/man1/intel_*
+# remove docs
+rm -rf %{buildroot}%{_datadir}/gtk-doc/html/intel-gpu-tools
 
+%files
+%{_bindir}/gem_userptr_benchmark
+%{_bindir}/intel-gpu-overlay
+%{_bindir}/intel_*
+%{_mandir}/man1/intel_*
