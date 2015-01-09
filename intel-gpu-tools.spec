@@ -1,5 +1,5 @@
 Name: intel-gpu-tools
-Version: 1.2
+Version: 1.9
 Release: 1
 Summary: Userland and debug tools Intel graphics controllers
 Group: System/X11
@@ -39,7 +39,7 @@ to get it rewritten when I move it over.
 %setup -q
 
 %build
-%configure2_5x
+%configure
 %make
 
 %install
@@ -50,36 +50,4 @@ to get it rewritten when I move it over.
 %{_bindir}/intel_*
 %{_bindir}/sprite_on
 %{_mandir}/man1/intel_*
-
-
-
-%changelog
-* Mon Feb 27 2012 Alexander Khrukin <akhrukin@mandriva.org> 1.2-1
-+ Revision: 781031
-- BR:pkgconfig(cairo)
-- version update 1.2
-
-* Sat Dec 31 2011 Matthew Dawkins <mattydaw@mandriva.org> 1.1-1
-+ Revision: 748523
-- fixed files list
-- added BR for libudev
-- new version 1.1
-- cleaned up spec
-
-  + Oden Eriksson <oeriksson@mandriva.com>
-    - the mass rebuild of 2010.0 packages
-
-* Fri Sep 25 2009 Thierry Vignaud <tv@mandriva.org> 1.0.2-1mdv2010.0
-+ Revision: 448834
-- drop patch 0 (uneeded)
-- adjust file list
-- new release
-
-* Wed May 20 2009 Colin Guthrie <cguthrie@mandriva.org> 1.0.1-1mdv2010.0
-+ Revision: 377954
-- New version 1.0.1
-
-* Wed May 13 2009 Colin Guthrie <cguthrie@mandriva.org> 1.0-1mdv2010.0
-+ Revision: 375325
-- import intel-gpu-tools
 
