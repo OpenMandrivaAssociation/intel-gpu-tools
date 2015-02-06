@@ -1,6 +1,6 @@
 Name: intel-gpu-tools
 Version: 1.9
-Release: 1
+Release: 2
 Summary: Userland and debug tools Intel graphics controllers
 Group: System/X11
 License: MIT
