@@ -9,6 +9,7 @@ Source0: http://xorg.freedesktop.org/archive/individual/app/%{name}-%{version}.t
 Source100: %{name}.rpmlintrc
 Patch0: intel-gpu-tools-1.20-compile.patch
 
+BuildRequires:	pkgconfig(alsa)
 BuildRequires:	pkgconfig(gl)
 BuildRequires:	pkgconfig(gsl)
 BuildRequires:	pkgconfig(cairo)
@@ -27,6 +28,7 @@ BuildRequires:	gtk-doc
 BuildRequires:	flex
 BuildRequires:	bison
 BuildRequires:	byacc
+BuildRequires:	python-docutils
 
 %description
 This little package is an amalgamation of a few things:
