@@ -23,6 +23,7 @@ BuildRequires:	pkgconfig(xorg-macros) >= 1.0.1
 BuildRequires:	pkgconfig(xproto) >= 1.0.0
 BuildRequires:	pkgconfig(xvmc) >= 1.0.1
 BuildRequires:	pkgconfig(xrandr)
+BuildRequires:	gtk-doc
 BuildRequires:	flex
 BuildRequires:	bison
 BuildRequires:	byacc
