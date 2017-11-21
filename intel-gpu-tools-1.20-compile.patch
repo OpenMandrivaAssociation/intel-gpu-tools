@@ -1,0 +1,10 @@
+--- intel-gpu-tools-1.20/tests/Makefile.am.omv~	2017-11-21 15:16:19.406684162 +0100
++++ intel-gpu-tools-1.20/tests/Makefile.am	2017-11-21 15:16:28.404671345 +0100
+@@ -87,6 +87,7 @@ CLEANFILES = $(EXTRA_PROGRAMS) test-list
+ AM_CFLAGS = $(DRM_CFLAGS) $(CWARNFLAGS) -Wno-unused-result $(DEBUG_CFLAGS)\
+ 	-I$(srcdir)/.. \
+ 	-I$(srcdir)/../lib \
++	$(shell pkg-config --cflags libkmod) \
+ 	-include "$(srcdir)/../lib/check-ndebug.h" \
+ 	-DIGT_SRCDIR=\""$(abs_srcdir)"\" \
+ 	-DIGT_DATADIR=\""$(pkgdatadir)"\" \

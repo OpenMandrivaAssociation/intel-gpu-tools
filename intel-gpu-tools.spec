@@ -1,16 +1,22 @@
 Name: intel-gpu-tools
-Version: 1.9
-Release: 2
+Version: 1.20
+Release: 1
 Summary: Userland and debug tools Intel graphics controllers
 Group: System/X11
 License: MIT
 URL: http://xorg.freedesktop.org
 Source0: http://xorg.freedesktop.org/archive/individual/app/%{name}-%{version}.tar.bz2
+Source100: %{name}.rpmlintrc
+Patch0: intel-gpu-tools-1.20-compile.patch
 
 BuildRequires:	pkgconfig(gl)
+BuildRequires:	pkgconfig(gsl)
 BuildRequires:	pkgconfig(cairo)
 BuildRequires:	pkgconfig(libdrm) >= 2.4.6
 BuildRequires:	pkgconfig(libudev)
+BuildRequires:	pkgconfig(libunwind)
+BuildRequires:	pkgconfig(libkmod)
+BuildRequires:	pkgconfig(pciaccess)
 BuildRequires:	pkgconfig(x11) >= 1.0.0
 BuildRequires:	pkgconfig(xorg-server) >= 1.3
 BuildRequires:	pkgconfig(xorg-macros) >= 1.0.1
@@ -41,10 +47,12 @@ to get it rewritten when I move it over.
 
 %prep
 %setup -q
+%apply_patches
 
 %build
-%configure
+CC=gcc CXX=g++ %configure
 %make
+# DEBUG_CFLAGS="%{optflags}"
 
 %install
 %makeinstall_std
@@ -53,7 +61,13 @@ to get it rewritten when I move it over.
 rm -rf %{buildroot}%{_datadir}/gtk-doc/html/intel-gpu-tools
 
 %files
-%{_bindir}/gem_userptr_benchmark
 %{_bindir}/intel-gpu-overlay
 %{_bindir}/intel_*
+%{_bindir}/igt_stats
+%{_bindir}/intel-gen4asm
+%{_bindir}/intel-gen4disasm
+%{_libdir}/intel_aubdump.so
+%{_libdir}/pkgconfig/intel-gen4asm.pc
+%{_libexecdir}/intel-gpu-tools
+%{_datadir}/intel-gpu-tools
 %{_mandir}/man1/intel_*
