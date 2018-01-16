@@ -1,7 +1,7 @@
---- intel-gpu-tools-1.20/tests/Makefile.am.omv~	2017-11-21 15:16:19.406684162 +0100
-+++ intel-gpu-tools-1.20/tests/Makefile.am	2017-11-21 15:16:28.404671345 +0100
-@@ -87,6 +87,7 @@ CLEANFILES = $(EXTRA_PROGRAMS) test-list
- AM_CFLAGS = $(DRM_CFLAGS) $(CWARNFLAGS) -Wno-unused-result $(DEBUG_CFLAGS)\
+--- intel-gpu-tools-1.21/tests/Makefile.am.0000~	2018-01-17 00:07:24.676658295 +0100
++++ intel-gpu-tools-1.21/tests/Makefile.am	2018-01-17 00:07:53.939263943 +0100
+@@ -88,6 +88,7 @@ AM_CFLAGS = $(CWARNFLAGS) -Wno-unused-re
+ 	-I$(top_srcdir)/include/drm-uapi \
  	-I$(srcdir)/.. \
  	-I$(srcdir)/../lib \
 +	$(shell pkg-config --cflags libkmod) \

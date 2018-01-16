@@ -5,7 +5,7 @@ Summary: Userland and debug tools Intel graphics controllers
 Group: System/X11
 License: MIT
 URL: http://xorg.freedesktop.org
-Source0: http://xorg.freedesktop.org/archive/individual/app/%{name}-%{version}.tar.bz2
+Source0: http://xorg.freedesktop.org/archive/individual/app/%{name}-%{version}.tar.xz
 Source100: %{name}.rpmlintrc
 Patch0: intel-gpu-tools-1.20-compile.patch
 
@@ -18,6 +18,7 @@ BuildRequires:	pkgconfig(libudev)
 BuildRequires:	pkgconfig(libunwind)
 BuildRequires:	pkgconfig(libkmod)
 BuildRequires:	pkgconfig(pciaccess)
+BuildRequires:	pkgconfig(libprocps)
 BuildRequires:	pkgconfig(x11) >= 1.0.0
 BuildRequires:	pkgconfig(xorg-server) >= 1.3
 BuildRequires:	pkgconfig(xorg-macros) >= 1.0.1
@@ -51,6 +52,7 @@ to get it rewritten when I move it over.
 %prep
 %setup -q
 %apply_patches
+./autogen.sh
 
 %build
 CC=gcc CXX=g++ %configure
@@ -64,7 +66,6 @@ CC=gcc CXX=g++ %configure
 rm -rf %{buildroot}%{_datadir}/gtk-doc/html/intel-gpu-tools
 
 %files
-%{_bindir}/intel-gpu-overlay
 %{_bindir}/intel_*
 %{_bindir}/igt_stats
 %{_bindir}/intel-gen4asm
