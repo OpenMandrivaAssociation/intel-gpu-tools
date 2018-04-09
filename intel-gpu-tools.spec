@@ -1,5 +1,5 @@
 Name: intel-gpu-tools
-Version: 1.21
+Version: 1.22
 Release: 1
 Summary: Userland and debug tools Intel graphics controllers
 Group: System/X11
