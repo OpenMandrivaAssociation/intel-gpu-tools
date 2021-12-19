@@ -15,6 +15,7 @@ BuildRequires:	pkgconfig(gl)
 BuildRequires:	pkgconfig(gsl)
 BuildRequires:	pkgconfig(cairo)
 BuildRequires:	pkgconfig(libdrm) >= 2.4.6
+BuildRequires:  pkgconfig(libdw)
 BuildRequires:	pkgconfig(libudev)
 BuildRequires:	pkgconfig(libunwind)
 BuildRequires:	pkgconfig(libkmod)
