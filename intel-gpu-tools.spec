@@ -1,13 +1,14 @@
+%define oname igt-gpu-tools
+
 Name: intel-gpu-tools
-Version: 1.22
+Version: 1.26
 Release: 1
 Summary: Userland and debug tools Intel graphics controllers
 Group: System/X11
 License: MIT
 URL: http://xorg.freedesktop.org
-Source0: http://xorg.freedesktop.org/archive/individual/app/%{name}-%{version}.tar.xz
+Source0: http://xorg.freedesktop.org/archive/individual/app/%{oname}-%{version}.tar.xz
 Source100: %{name}.rpmlintrc
-Patch0: intel-gpu-tools-1.20-compile.patch
 
 BuildRequires:	pkgconfig(alsa)
 BuildRequires:	pkgconfig(gl)
@@ -30,6 +31,8 @@ BuildRequires:	flex
 BuildRequires:	bison
 BuildRequires:	byacc
 BuildRequires:	python-docutils
+
+%rename igt-gpu-tools
 
 %description
 This little package is an amalgamation of a few things:
@@ -56,11 +59,11 @@ to get it rewritten when I move it over.
 
 %build
 CC=gcc CXX=g++ %configure
-%make
+%make_build
 # DEBUG_CFLAGS="%{optflags}"
 
 %install
-%makeinstall_std
+%make_install
 
 # remove docs
 rm -rf %{buildroot}%{_datadir}/gtk-doc/html/intel-gpu-tools
