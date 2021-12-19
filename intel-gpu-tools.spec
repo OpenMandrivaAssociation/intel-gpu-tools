@@ -26,6 +26,7 @@ BuildRequires:	pkgconfig(xorg-macros) >= 1.0.1
 BuildRequires:	pkgconfig(xproto) >= 1.0.0
 BuildRequires:	pkgconfig(xvmc) >= 1.0.1
 BuildRequires:	pkgconfig(xrandr)
+BuildRequires:  meson
 BuildRequires:	gtk-doc
 BuildRequires:	flex
 BuildRequires:	bison
@@ -54,15 +55,13 @@ to get it rewritten when I move it over.
 
 %prep
 %autosetup -n %{oname}-%{version} -p1
-./autogen.sh
 
 %build
-CC=gcc CXX=g++ %configure
-%make_build
-# DEBUG_CFLAGS="%{optflags}"
+%meson
+%meson_build
 
 %install
-%make_install
+%eson_install
 
 # remove docs
 rm -rf %{buildroot}%{_datadir}/gtk-doc/html/intel-gpu-tools
