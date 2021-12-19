@@ -54,7 +54,7 @@ to get it rewritten when I move it over.
 
 %prep
 %setup -q
-%autopatch -p1
+%autopatch -n %{oname}-%{version} -p1
 ./autogen.sh
 
 %build
