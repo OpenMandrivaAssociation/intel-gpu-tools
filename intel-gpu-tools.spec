@@ -53,8 +53,7 @@ The intel_regdumper tool didn't make it into this release, since I want
 to get it rewritten when I move it over.
 
 %prep
-%setup -q
-%autopatch -n %{oname}-%{version} -p1
+%autosetup -n %{oname}-%{version} -p1
 ./autogen.sh
 
 %build
