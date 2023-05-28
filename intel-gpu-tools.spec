@@ -18,7 +18,7 @@ BuildRequires:	pkgconfig(libudev)
 BuildRequires:	pkgconfig(libunwind)
 BuildRequires:	pkgconfig(libkmod)
 BuildRequires:	pkgconfig(pciaccess)
-BuildRequires:	pkgconfig(libprocps)
+#BuildRequires:	pkgconfig(libprocps)
 BuildRequires:	pkgconfig(libproc2)
 BuildRequires:	pkgconfig(x11) >= 1.0.0
 BuildRequires:	pkgconfig(xorg-server) >= 1.3
