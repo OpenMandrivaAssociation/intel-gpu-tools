@@ -4,7 +4,7 @@ Release: 2
 Summary: Userland and debug tools Intel graphics controllers
 Group: System/X11
 License: MIT
-URL: http://xorg.freedesktop.org
+URL: https://xorg.freedesktop.org
 Source0: http://xorg.freedesktop.org/archive/individual/app/%{name}-%{version}.tar.xz
 Source100: %{name}.rpmlintrc
 Patch0: intel-gpu-tools-1.20-compile.patch
