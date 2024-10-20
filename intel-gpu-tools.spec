@@ -1,19 +1,23 @@
 %define oname igt-gpu-tools
 
 Name: intel-gpu-tools
-Version: 1.26
+Version: 1.29
 Release: 1
 Summary: Userland and debug tools Intel graphics controllers
 Group: System/X11
 License: MIT
-URL: http://xorg.freedesktop.org
-Source0: http://xorg.freedesktop.org/archive/individual/app/%{oname}-%{version}.tar.xz
+URL: https://xorg.freedesktop.org
+Source0: https://xorg.freedesktop.org/archive/individual/app/%{oname}-%{version}.tar.xz
 Source100: %{name}.rpmlintrc
 
 BuildRequires:	pkgconfig(alsa)
 BuildRequires:	pkgconfig(gl)
 BuildRequires:	pkgconfig(gsl)
 BuildRequires:	pkgconfig(cairo)
+BuildRequires:  pkgconfig(dri2proto)
+BuildRequires:  pkgconfig(glib-2.0)
+BuildRequires:  pkgconfig(gsl)
+BuildRequires:  pkgconfig(json-c)
 BuildRequires:	pkgconfig(libdrm) >= 2.4.6
 BuildRequires:  pkgconfig(libdw)
 BuildRequires:	pkgconfig(libudev)
@@ -29,6 +33,7 @@ BuildRequires:	pkgconfig(xvmc) >= 1.0.1
 BuildRequires:	pkgconfig(xrandr)
 BuildRequires:  pkgconfig(xmlrpc)
 BuildRequires:  pkgconfig(valgrind)
+BuildRequires:  cmake
 BuildRequires:  meson
 BuildRequires:	gtk-doc
 BuildRequires:	flex
@@ -60,7 +65,7 @@ to get it rewritten when I move it over.
 %autosetup -n %{oname}-%{version} -p1
 
 %build
-%meson
+%meson -Doverlay=enabled -Doping=disabled -Ddocs=disabled
 %meson_build
 
 %install
