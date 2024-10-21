@@ -62,6 +62,16 @@ graphical apps, useful for pairing with sysprof+top.
 The intel_regdumper tool didn't make it into this release, since I want
 to get it rewritten when I move it over.
 
+%package devel
+Summary:   Xorg X11 Intel video driver development package
+Group:     Development/C
+Requires:  %{name} = %{EVRD}
+Provides:  xorg-x11-drv-intel-devel = %{EVRD}
+
+%description devel
+X.Org X11 Intel video driver development package.
+
+
 %prep
 %autosetup -n %{oname}-%{version} -p1
 
@@ -75,13 +85,29 @@ to get it rewritten when I move it over.
 # remove docs
 rm -rf %{buildroot}%{_datadir}/gtk-doc/html/intel-gpu-tools
 
+
 %files
-%{_bindir}/intel_*
-%{_bindir}/igt_stats
-%{_bindir}/intel-gen4asm
-%{_bindir}/intel-gen4disasm
-#{_libdir}/intel_aubdump.so
+%doc NEWS README.md
+%{_bindir}/amd_*
+%{_bindir}/code_cov_*
+%{_bindir}/igt_*
+%{_bindir}/i915-perf*
+%{_bindir}/intel*
+%{_bindir}/dpcd_reg
+%{_bindir}/msm_dp_compliance
+%{_bindir}/lsgpu
+%{_bindir}/gputop
+%{_bindir}/xe-perf*
+%{_datadir}/%{tarname}/
+%{_libdir}/lib*.so.0
+%{_libdir}/lib*.so.1.5
+%{_libexecdir}/%{tarname}/
+%{_mandir}/man1/intel*.1*
+
+%files devel
 %{_libdir}/pkgconfig/intel-gen4asm.pc
-#{_libexecdir}/intel-gpu-tools
-#{_datadir}/intel-gpu-tools
-%{_mandir}/man1/intel_*
+%{_libdir}/lib*.so
+%{_libdir}/pkgconfig/xe-oa.pc
+%{_includedir}/xe-oa/
+%{_libdir}/pkgconfig/i915-perf.pc
+%{_includedir}/i915-perf/
