@@ -80,8 +80,8 @@ rm -rf %{buildroot}%{_datadir}/gtk-doc/html/intel-gpu-tools
 %{_bindir}/igt_stats
 %{_bindir}/intel-gen4asm
 %{_bindir}/intel-gen4disasm
-%{_libdir}/intel_aubdump.so
+#{_libdir}/intel_aubdump.so
 %{_libdir}/pkgconfig/intel-gen4asm.pc
-%{_libexecdir}/intel-gpu-tools
-%{_datadir}/intel-gpu-tools
+#{_libexecdir}/intel-gpu-tools
+#{_datadir}/intel-gpu-tools
 %{_mandir}/man1/intel_*
