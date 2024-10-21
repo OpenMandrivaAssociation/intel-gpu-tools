@@ -40,7 +40,7 @@ BuildRequires:	flex
 BuildRequires:	bison
 BuildRequires:	byacc
 BuildRequires:	python-docutils
-BuildRequires:  peg
+BuildRequires:  leg
 
 %rename igt-gpu-tools
 
