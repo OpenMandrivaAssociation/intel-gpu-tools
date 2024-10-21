@@ -98,10 +98,10 @@ rm -rf %{buildroot}%{_datadir}/gtk-doc/html/intel-gpu-tools
 %{_bindir}/lsgpu
 %{_bindir}/gputop
 %{_bindir}/xe-perf*
-%{_datadir}/%{tarname}/
+%{_datadir}/%{oname}/
 %{_libdir}/lib*.so.0
 %{_libdir}/lib*.so.1.5
-%{_libexecdir}/%{tarname}/
+%{_libexecdir}/%{oname}/
 %{_mandir}/man1/intel*.1*
 
 %files devel
