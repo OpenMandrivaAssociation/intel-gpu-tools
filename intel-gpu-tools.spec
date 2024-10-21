@@ -70,7 +70,7 @@ to get it rewritten when I move it over.
 %meson_build
 
 %install
-%eson_install
+%meson_install
 
 # remove docs
 rm -rf %{buildroot}%{_datadir}/gtk-doc/html/intel-gpu-tools
