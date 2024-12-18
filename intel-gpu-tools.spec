@@ -1,7 +1,7 @@
 %define oname igt-gpu-tools
 
 Name: intel-gpu-tools
-Version: 1.29
+Version: 1.30
 Release: 1
 Summary: Userland and debug tools Intel graphics controllers
 Group: System/X11
@@ -97,6 +97,7 @@ rm -rf %{buildroot}%{_datadir}/gtk-doc/html/intel-gpu-tools
 %{_bindir}/msm_dp_compliance
 %{_bindir}/lsgpu
 %{_bindir}/gputop
+%{_bindir}/power
 %{_bindir}/xe-perf*
 %{_datadir}/%{oname}/
 %{_libdir}/lib*.so.0
