@@ -1,7 +1,7 @@
 %define oname igt-gpu-tools
 
 Name: intel-gpu-tools
-Version: 1.29
+Version: 1.30
 Release: 1
 Summary: Userland and debug tools Intel graphics controllers
 Group: System/X11
