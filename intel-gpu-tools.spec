@@ -97,6 +97,7 @@ rm -rf %{buildroot}%{_datadir}/gtk-doc/html/intel-gpu-tools
 %{_bindir}/msm_dp_compliance
 %{_bindir}/lsgpu
 %{_bindir}/gputop
+%{_bindir}/power
 %{_bindir}/xe-perf*
 %{_datadir}/%{oname}/
 %{_libdir}/lib*.so.0
