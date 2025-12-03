@@ -103,6 +103,7 @@ rm -rf %{buildroot}%{_datadir}/gtk-doc/html/intel-gpu-tools
 %{_libdir}/lib*.so.1.5
 %{_libexecdir}/%{oname}/
 %{_mandir}/man1/intel*.1*
+%{_mandir}/man1/lsgpu.1.*
 
 %files devel
 %{_libdir}/pkgconfig/intel-gen4asm.pc
