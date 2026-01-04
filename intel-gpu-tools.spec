@@ -1,13 +1,14 @@
 %define oname igt-gpu-tools
 
 Name: intel-gpu-tools
-Version: 2.2
+Version: 2.3
 Release: 1
 Summary: Userland and debug tools Intel graphics controllers
 Group: System/X11
 License: MIT
 URL: https://xorg.freedesktop.org
-Source0: https://xorg.freedesktop.org/archive/individual/app/%{oname}-%{version}.tar.xz
+#Source0: https://xorg.freedesktop.org/archive/individual/app/%{oname}-%{version}.tar.xz
+Source0:  https://gitlab.freedesktop.org/drm/igt-gpu-tools/-/archive/v%{version}/igt-gpu-tools-v%{version}.tar.bz2
 Source100: %{name}.rpmlintrc
 
 BuildRequires:	pkgconfig(alsa)
@@ -73,7 +74,7 @@ X.Org X11 Intel video driver development package.
 
 
 %prep
-%autosetup -n %{oname}-%{version} -p1
+%autosetup -n %{oname}-v%{version} -p1
 
 %build
 %meson -Doverlay=enabled -Doping=disabled -Ddocs=disabled
