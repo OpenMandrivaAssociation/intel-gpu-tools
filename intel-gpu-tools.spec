@@ -1,7 +1,7 @@
 %define oname igt-gpu-tools
 
 Name: intel-gpu-tools
-Version: 2.3
+Version: 2.5
 Release: 1
 Summary: Userland and debug tools Intel graphics controllers
 Group: System/X11
@@ -74,7 +74,7 @@ X.Org X11 Intel video driver development package.
 
 
 %prep
-%autosetup -n %{oname}-v%{version} -p1
+%autosetup -n igt-gpu-tools-v2.5 -p1
 
 %build
 %meson -Doverlay=enabled -Doping=disabled -Ddocs=disabled
